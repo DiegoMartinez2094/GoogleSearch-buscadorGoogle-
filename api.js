@@ -1,5 +1,5 @@
 async function buscarGoogle(){
-const buscar = document.getElementById("buscar").value;
+const buscar = document.getElementById("barraBuscar").value;
 const url = `https://google-search74.p.rapidapi.com/?query=${buscar}&limit=10&related_keywords=true`;
 const options = {
 	method: 'GET',
