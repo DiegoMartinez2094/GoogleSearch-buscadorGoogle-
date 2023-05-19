@@ -14,6 +14,10 @@ try {
 	const result = await response.json();
 	console.log(result);
     const wiki=result.results[0];
+    console.log(wiki)
+    const description=result.results[0].description;
+    console.log(description)
+    document.getElementById("info").innerHTML = `<h3>${description}</h3>`;
 
 } catch (error) {
 	console.error(error);
