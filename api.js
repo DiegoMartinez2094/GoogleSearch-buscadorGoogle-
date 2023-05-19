@@ -1,4 +1,4 @@
-async function buscar(){
+async function buscarGoogle(){
 const buscar = document.getElementById("buscar").value;
 const url = `https://google-search74.p.rapidapi.com/?query=${buscar}&limit=10&related_keywords=true`;
 const options = {
@@ -13,6 +13,8 @@ try {
 	const response = await fetch(url, options);
 	const result = await response.json();
 	console.log(result);
+    const wiki=result.results[0];
+
 } catch (error) {
 	console.error(error);
 }

@@ -1,0 +1,19 @@
+#imagenGoogle{
+    width: 600px;
+    height: 350px;
+    margin-left: 300px;
+    padding-bottom: 10px;
+}
+#barraBuscar{
+    margin-left: 300px;
+    width: 600px;
+    margin-bottom: 10px;
+}
+#barraBuscar::placeholder{
+    text-align: center;
+}
+#btnBuscarGoogle{
+    width: 200px;
+    margin-left: 350px;
+
+}
