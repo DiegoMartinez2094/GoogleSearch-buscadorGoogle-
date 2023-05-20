@@ -16,6 +16,7 @@ try {
     const wiki=result.results[0];
     console.log(wiki)
     const description=result.results[0].description;
+	const title=result.results[0].url;
     console.log(description)
     document.getElementById("info").innerHTML = `
 	<div class="container" >
@@ -41,6 +42,7 @@ try {
 	</div>
 
 	<div class="row">
+	    <h1>${title}</h1>
 		<h3>${description}</h3>
 	</div>
 </div> 
