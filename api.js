@@ -17,7 +17,34 @@ try {
     console.log(wiki)
     const description=result.results[0].description;
     console.log(description)
-    document.getElementById("info").innerHTML = `<h3>${description}</h3>`;
+    document.getElementById("info").innerHTML = `
+	<div class="container" >
+	<div class="row">
+		<div class="col-lg-2" style="padding-right: 0px; ">
+			<img src="./imagenes/google.gif" alt="imagen google" style="height: 100px; padding-right: 0px;">
+		</div>
+
+		<div class="col-lg-6" style="margin-top: 50px; padding-left: 0%;  ">
+			<input id="barraBuscar" type="text" class="form-control" aria-label="Username"
+				aria-describedby="addon-wrapping" style="width: 600px;" />
+		</div>
+		<div class="col-lg-2"style="margin-top: 50px;">
+			<button type="button" class="btn btn" onclick="buscarGoogle()" id="btnBuscarGoogle">
+				Buscar en Google
+			</button>
+		</div>
+		<div class="col-lg-2"style="margin-top: 50px;">
+			<button type="button" class="btn btn" onclick="buscarImagenes()" id="btnBuscarImagenes">
+				Buscar Imagenes
+			</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<h3>${description}</h3>
+	</div>
+</div> 
+`;
 
 } catch (error) {
 	console.error(error);
