@@ -8,7 +8,7 @@ async function buscarGoogle() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "adaad128aemsh6cfb78feb6e838dp15a6d2jsn85a17c09c579",
+      "X-RapidAPI-Key": "7a873bc988mshc50969902764e86p1dc2b9jsnfbe735b389f8",
       "X-RapidAPI-Host": "google-search74.p.rapidapi.com",
     },
   };
@@ -40,11 +40,11 @@ async function buscarGoogle() {
 			search in images
 			</button>
 		</div>
-		<div class="col-lg-4">
-                <button style="margin-left: 10px;margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
-                    Google Translate
-                </button>
-            </div>
+		<div class="col-lg-4" style="padding-left:4px;" >
+		<button style="margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
+			Google Translate
+		</button>
+	</div>
 		
 	</div>
        <br>
@@ -109,7 +109,7 @@ async function buscarImagenes() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "ab588c178fmsha19d835278e2e57p1d9b36jsnf6e7e26376a7",
+      "X-RapidAPI-Key": "7a873bc988mshc50969902764e86p1dc2b9jsnfbe735b389f8",
       "X-RapidAPI-Host": "google-search72.p.rapidapi.com",
     },
   };
@@ -140,16 +140,16 @@ async function buscarImagenes() {
 		search in images
 		</button>
 	</div>
-	<div class="col-lg-4">
-			<button style="margin-left: 10px;margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
-				Google Translate
-			</button>
-		</div>
+	<div class="col-lg-4" style="padding-left:4px;" >
+	<button style="margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
+		Google Translate
+	</button>
+</div>
 	
 </div>
 		<br>
 		
-		<div class="row">
+		<div class="row" style="padding: 10px;">
         <div class="col-lg-2">
 		<div class="card" style="width: 18rem;">
 		<img src="${result.items[0].thumbnailImageUrl}" class="card-img-top" alt="...">
@@ -264,8 +264,8 @@ async function traductor() {
   document.getElementById("info").innerHTML = `  
   <div class="row" >
 	
-  <div class="col-lg-3" style="padding-right: 0px;width: 170px;">
-	  <img src="./imagenes/google.gif" alt="imagen google" style="height: 100px; padding-right: 0px;">
+  <div class="col-lg-3" style="margin-left:10px;width: 190px;">
+	  <img src="./imagenes/traductorGoogle.avif" alt="imagen google" style="height: 100px; padding-right: 0px;">
   </div>
 
   <div class="col-lg-3" style="margin-top: 50px; padding-left: 0%; width: 400px;">
@@ -277,13 +277,13 @@ async function traductor() {
 	  Search in Google
 	  </button>
   </div>
-  <div class="col-lg-3"style="margin-top: 50px;width: 170px;margin-left:15px;">
+  <div class="col-lg-3"style="margin-top: 50px;width: 170px;margin-left:20px;">
 	  <button type="button" class="btn btn-outline-secondary" onclick="buscarImagenes()" id="btnBuscarImagenes" >
 	  search in images
 	  </button>
   </div>
-  <div class="col-lg-4">
-		  <button style="margin-left: 10px;margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
+  <div class="col-lg-4" style="padding-left:4px;" >
+		  <button style="margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
 			  Google Translate
 		  </button>
 	  </div>
@@ -302,11 +302,12 @@ async function traductor() {
 	  <option value="el-GR">Greek</option>
 	  <option value="it-IT">Italian</option>
 	  <option value="ja-JP">Japanese</option>
+	  <option value="ko-KR">Korean</option>
 	  <option value="ru-RU">Russian</option>
 	  <option value="es-ES">Spanish</option>
       </select>
 
-	  <textarea class="form-control" id="textToTranslate" rows="3"></textarea>
+	  <textarea class="form-control" id="textToTranslate" rows="3"  placeholder="Insert Text To Translate"></textarea>
 	  </div>
 	  <div class="col-lg-1" style="width:110px;">
 	  <button type="button" class="btn btn-outline-info" onclick="btnTraducir()" id="btnTraducir" style="margin-top: 30px;">
@@ -325,12 +326,13 @@ async function traductor() {
 	  <option value="el-GR">Greek</option>
 	  <option value="it-IT">Italian</option>
 	  <option value="ja-JP">Japanese</option>
+	  <option value="ko-KR">Korean</option>
 	  <option value="ru-RU">Russian</option>
 	  <option value="es-ES">Spanish</option>
 	
       </select>
 
-	  <textarea class="form-control" id="textTranslated" rows="3"></textarea>
+	  <textarea class="form-control" id="textTranslated" rows="3"  placeholder="Translation"></textarea>
 	  </div>
 	  </div>
 	  `;
@@ -344,7 +346,7 @@ async function btnTraducir() {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      "X-RapidAPI-Key": "282e8ded6amsh389b2ead7fe7657p11c32cjsn6b13b7ade005",
+      "X-RapidAPI-Key": "7a873bc988mshc50969902764e86p1dc2b9jsnfbe735b389f8",
       "X-RapidAPI-Host": "rapid-translate-multi-traduction.p.rapidapi.com",
     },
     body: JSON.stringify({
