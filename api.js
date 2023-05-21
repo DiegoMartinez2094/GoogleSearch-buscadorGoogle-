@@ -30,16 +30,21 @@ async function buscarGoogle() {
 			<input id="barraBuscar" type="text" class="form-control" aria-label="Username"
 				aria-describedby="addon-wrapping" style="width: 400px;margin-left: 0px;" />
 		</div>
-		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
-			<button type="button" class="btn btn" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
+		<div class="col-lg-3"style="margin-top: 50px; width: 200px;">
+			<button type="button" class="btn btn-outline-secondary" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
 			Search in Google
 			</button>
 		</div>
-		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
-			<button type="button" class="btn btn" onclick="buscarImagenes()" id="btnBuscarImagenes" style="margin-left: 0px;padding-left: 0px;">
+		<div class="col-lg-3"style="margin-top: 50px;width: 170px;margin-left:15px;">
+			<button type="button" class="btn btn-outline-secondary" onclick="buscarImagenes()" id="btnBuscarImagenes" >
 			search in images
 			</button>
 		</div>
+		<div class="col-lg-4">
+                <button style="margin-left: 10px;margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
+                    Google Translate
+                </button>
+            </div>
 		
 	</div>
        <br>
@@ -96,7 +101,6 @@ async function buscarGoogle() {
   } catch (error) {
     console.error(error);
   }
-
 }
 
 async function buscarImagenes() {
@@ -105,7 +109,6 @@ async function buscarImagenes() {
   const options = {
     method: "GET",
     headers: {
-     
       "X-RapidAPI-Key": "ab588c178fmsha19d835278e2e57p1d9b36jsnf6e7e26376a7",
       "X-RapidAPI-Host": "google-search72.p.rapidapi.com",
     },
@@ -117,26 +120,33 @@ async function buscarImagenes() {
     console.log(result);
     document.getElementById("info").innerHTML = `
 	    
-	  <div class="row" >
+	<div class="row" >
 	
-		<div class="col-lg-3" style="padding-right: 0px;width: 170px;">
-			<img src="./imagenes/google.gif" alt="imagen google" style="height: 100px; padding-right: 0px;">
-		</div>
+	<div class="col-lg-3" style="padding-right: 0px;width: 170px;">
+		<img src="./imagenes/google.gif" alt="imagen google" style="height: 100px; padding-right: 0px;">
+	</div>
 
-		<div class="col-lg-3" style="margin-top: 50px; padding-left: 0%; width: 400px;">
-			<input id="barraBuscar" type="text" class="form-control" aria-label="Username"
-				aria-describedby="addon-wrapping" style="width: 400px;margin-left: 0px;" />
-		</div>
-		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
-			<button type="button" class="btn btn" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
-			Search in Google
+	<div class="col-lg-3" style="margin-top: 50px; padding-left: 0%; width: 400px;">
+		<input id="barraBuscar" type="text" class="form-control" aria-label="Username"
+			aria-describedby="addon-wrapping" style="width: 400px;margin-left: 0px;" />
+	</div>
+	<div class="col-lg-3"style="margin-top: 50px; width: 200px;">
+		<button type="button" class="btn btn-outline-secondary" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
+		Search in Google
+		</button>
+	</div>
+	<div class="col-lg-3"style="margin-top: 50px;width: 170px;margin-left:15px;">
+		<button type="button" class="btn btn-outline-secondary" onclick="buscarImagenes()" id="btnBuscarImagenes" >
+		search in images
+		</button>
+	</div>
+	<div class="col-lg-4">
+			<button style="margin-left: 10px;margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
+				Google Translate
 			</button>
 		</div>
-		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
-			<button type="button" class="btn btn" onclick="buscarImagenes()" id="btnBuscarImagenes" style="margin-left: 0px;padding-left: 0px;">
-			search in images
-			</button>
-		</div>
+	
+</div>
 		<br>
 		
 		<div class="row">
@@ -251,34 +261,92 @@ async function buscarImagenes() {
 }
 
 async function traductor() {
-	const url = 'https://rapid-translate-multi-traduction.p.rapidapi.com/t';
-const options = {
-	method: 'POST',
-	headers: {
-		'content-type': 'application/json',
-		'X-RapidAPI-Key': '282e8ded6amsh389b2ead7fe7657p11c32cjsn6b13b7ade005',
-		'X-RapidAPI-Host': 'rapid-translate-multi-traduction.p.rapidapi.com'
-	},
-	body: JSON.stringify({
-		from: 'en',
-		to: 'es',
-		q: 'Hello !'
-	}) 
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.json();
-	console.log(result[0]);
-
-
-
-
+  document.getElementById("info").innerHTML = `  
+  <div class="row" >
 	
-} catch (error) {
-	console.error(error);
+  <div class="col-lg-3" style="padding-right: 0px;width: 170px;">
+	  <img src="./imagenes/google.gif" alt="imagen google" style="height: 100px; padding-right: 0px;">
+  </div>
+
+  <div class="col-lg-3" style="margin-top: 50px; padding-left: 0%; width: 400px;">
+	  <input id="barraBuscar" type="text" class="form-control" aria-label="Username"
+		  aria-describedby="addon-wrapping" style="width: 400px;margin-left: 0px;" />
+  </div>
+  <div class="col-lg-3"style="margin-top: 50px; width: 200px;">
+	  <button type="button" class="btn btn-outline-secondary" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
+	  Search in Google
+	  </button>
+  </div>
+  <div class="col-lg-3"style="margin-top: 50px;width: 170px;margin-left:15px;">
+	  <button type="button" class="btn btn-outline-secondary" onclick="buscarImagenes()" id="btnBuscarImagenes" >
+	  search in images
+	  </button>
+  </div>
+  <div class="col-lg-4">
+		  <button style="margin-left: 10px;margin-top: 50px;" type="button" class="btn btn-outline-secondary" onclick="traductor()" id="btntraductor">
+			  Google Translate
+		  </button>
+	  </div>
+  
+</div><br>
+	  <div class="row">
+
+	  <div class="col-lg-3" style="margin-left: 10px";>
+
+	  <select class="form-select" aria-label="Default select example" id="de">
+      <option selected>Of</option>
+      <option value="en-GB">English</option>
+      <option value="es-ES">Spanish</option>
+      <option value="fr-FR">French</option>
+      </select>
+
+	  <textarea class="form-control" id="textToTranslate" rows="3"></textarea>
+	  </div>
+	  <div class="col-lg-1" style="width:110px;">
+	  <button type="button" class="btn btn-outline-secondary" onclick="btnTraducir()" id="btnTraducir" style="margin-top: 30px;">
+		  Translate
+		  </button>
+	  </div>
+	  <div class="col-lg-3";>
+
+	  <select class="form-select" aria-label="Default select example" id="a">
+      <option selected>Of</option>
+      <option value="en-GB">English</option>
+      <option value="es-ES">Spanish</option>
+      <option value="fr-FR">French</option>
+      </select>
+
+	  <textarea class="form-control" id="textTranslated" rows="3"></textarea>
+	  </div>
+	  </div>
+	  `;
 }
+async function btnTraducir() {
+  const textIN = document.getElementById("textToTranslate").value;
+  const de=document.getElementById("de").value;
+  const a=document.getElementById("a").value;
+  const url = "https://rapid-translate-multi-traduction.p.rapidapi.com/t";
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "X-RapidAPI-Key": "282e8ded6amsh389b2ead7fe7657p11c32cjsn6b13b7ade005",
+      "X-RapidAPI-Host": "rapid-translate-multi-traduction.p.rapidapi.com",
+    },
+    body: JSON.stringify({
+      from: de,
+      to: a,
+      q: textIN,
+    }),
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result[0]);
+    const textoTraducido = result[0];
+    document.getElementById("textTranslated").innerHTML = `${textoTraducido}`;
+  } catch (error) {
+    console.error(error);
+  }
 }
-
-
-
