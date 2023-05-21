@@ -289,31 +289,45 @@ async function traductor() {
 	  </div>
   
 </div><br>
-	  <div class="row">
+	  <div class="row" >
 
-	  <div class="col-lg-3" style="margin-left: 10px";>
+	  <div class="col-lg-3" style="margin-left: 50px";>
 
 	  <select class="form-select" aria-label="Default select example" id="de">
       <option selected>Of</option>
-      <option value="en-GB">English</option>
-      <option value="es-ES">Spanish</option>
-      <option value="fr-FR">French</option>
+	  <option value="ar-SA">Arabic</option>
+	  <option value="en-GB">English</option>
+	  <option value="fr-FR">French</option>
+	  <option value="de-DE">German</option>
+	  <option value="el-GR">Greek</option>
+	  <option value="it-IT">Italian</option>
+	  <option value="ja-JP">Japanese</option>
+	  <option value="ru-RU">Russian</option>
+	  <option value="es-ES">Spanish</option>
       </select>
 
 	  <textarea class="form-control" id="textToTranslate" rows="3"></textarea>
 	  </div>
 	  <div class="col-lg-1" style="width:110px;">
-	  <button type="button" class="btn btn-outline-secondary" onclick="btnTraducir()" id="btnTraducir" style="margin-top: 30px;">
+	  <button type="button" class="btn btn-outline-info" onclick="btnTraducir()" id="btnTraducir" style="margin-top: 30px;">
 		  Translate
 		  </button>
 	  </div>
 	  <div class="col-lg-3";>
 
 	  <select class="form-select" aria-label="Default select example" id="a">
-      <option selected>Of</option>
-      <option value="en-GB">English</option>
-      <option value="es-ES">Spanish</option>
-      <option value="fr-FR">French</option>
+      <option selected>To</option>
+      
+	  <option value="ar-SA">Arabic</option>
+	  <option value="en-GB">English</option>
+	  <option value="fr-FR">French</option>
+	  <option value="de-DE">German</option>
+	  <option value="el-GR">Greek</option>
+	  <option value="it-IT">Italian</option>
+	  <option value="ja-JP">Japanese</option>
+	  <option value="ru-RU">Russian</option>
+	  <option value="es-ES">Spanish</option>
+	
       </select>
 
 	  <textarea class="form-control" id="textTranslated" rows="3"></textarea>
