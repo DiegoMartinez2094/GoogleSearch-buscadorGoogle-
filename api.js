@@ -252,26 +252,33 @@ async function buscarImagenes() {
 
 async function traductor() {
 	const url = 'https://rapid-translate-multi-traduction.p.rapidapi.com/t';
-    const options = {
+const options = {
 	method: 'POST',
 	headers: {
 		'content-type': 'application/json',
 		'X-RapidAPI-Key': '282e8ded6amsh389b2ead7fe7657p11c32cjsn6b13b7ade005',
 		'X-RapidAPI-Host': 'rapid-translate-multi-traduction.p.rapidapi.com'
 	},
-	body: {
+	body: JSON.stringify({
 		from: 'en',
-		to: 'ar',
-		q: 'Hello ! Rapid Translate Multi Traduction'
-	}
+		to: 'es',
+		q: 'Hello !'
+	}) 
 };
 
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-	console.log(result);
+	console.log(result[0]);
+
+
+
+
+	
 } catch (error) {
 	console.error(error);
 }
 }
+
+
 
