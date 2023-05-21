@@ -32,12 +32,12 @@ async function buscarGoogle() {
 		</div>
 		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
 			<button type="button" class="btn btn" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
-				Buscar en Google
+			Search in Google
 			</button>
 		</div>
 		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
 			<button type="button" class="btn btn" onclick="buscarImagenes()" id="btnBuscarImagenes" style="margin-left: 0px;padding-left: 0px;">
-				Buscar imagenes
+			search in images
 			</button>
 		</div>
 		
@@ -46,7 +46,8 @@ async function buscarGoogle() {
 
 	<div style="margin-left:30px;">
 		<div class="row">
-		<span>Cerca de ${numeroBusquedas} resultados</span>
+		<span>About ${numeroBusquedas} results</span>
+		<hr>
 		<a href="${result.results[0].url}"style="text-decoration: none;"><h3>${result.results[0].title}</h3></a>
 			<h6>${result.results[0].description}</h6>
 		</div>
@@ -95,6 +96,7 @@ async function buscarGoogle() {
   } catch (error) {
     console.error(error);
   }
+
 }
 
 async function buscarImagenes() {
@@ -127,12 +129,12 @@ async function buscarImagenes() {
 		</div>
 		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
 			<button type="button" class="btn btn" onclick="buscarGoogle()" id="btnBuscarGoogle" style="margin-left: 0px;padding-left: 0px;">
-				Buscar en Google
+			Search in Google
 			</button>
 		</div>
 		<div class="col-lg-3"style="margin-top: 50px;width: 200px">
 			<button type="button" class="btn btn" onclick="buscarImagenes()" id="btnBuscarImagenes" style="margin-left: 0px;padding-left: 0px;">
-				Buscar imagenes
+			search in images
 			</button>
 		</div>
 		<br>
@@ -247,3 +249,29 @@ async function buscarImagenes() {
     console.error(error);
   }
 }
+
+async function traductor() {
+	const url = 'https://rapid-translate-multi-traduction.p.rapidapi.com/t';
+    const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/json',
+		'X-RapidAPI-Key': '282e8ded6amsh389b2ead7fe7657p11c32cjsn6b13b7ade005',
+		'X-RapidAPI-Host': 'rapid-translate-multi-traduction.p.rapidapi.com'
+	},
+	body: {
+		from: 'en',
+		to: 'ar',
+		q: 'Hello ! Rapid Translate Multi Traduction'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+}
+
