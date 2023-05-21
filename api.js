@@ -3,22 +3,22 @@
 //4d3abdd95amsh42b11a056be5dccp19703cjsn96a51d54275a
 //3c3a7a1fa4msh0e92c078fd61424p137867jsnebb20098d172
 async function buscarGoogle() {
-	const buscar = document.getElementById("barraBuscar").value;
-	const url = `https://google-search74.p.rapidapi.com/?query=${buscar}&limit=10&related_keywords=true`;
-	const options = {
-		method: 'GET',
-		headers: {
-			'X-RapidAPI-Key': 'adaad128aemsh6cfb78feb6e838dp15a6d2jsn85a17c09c579',
-			'X-RapidAPI-Host': 'google-search74.p.rapidapi.com'
-		}
-	};
+  const buscar = document.getElementById("barraBuscar").value;
+  const url = `https://google-search74.p.rapidapi.com/?query=${buscar}&limit=10&related_keywords=true`;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "adaad128aemsh6cfb78feb6e838dp15a6d2jsn85a17c09c579",
+      "X-RapidAPI-Host": "google-search74.p.rapidapi.com",
+    },
+  };
 
-	try {
-		const response = await fetch(url, options);
-		const result = await response.json();
-		console.log(result);
-		const numeroBusquedas = result.results.length;
-		document.getElementById("info").innerHTML = `
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result);
+    const numeroBusquedas = result.results.length;
+    document.getElementById("info").innerHTML = `
 	
 	<div class="row" >
 	
@@ -92,36 +92,30 @@ async function buscarGoogle() {
 		</div>
 		<br>
 	</div>`;
-
-	} catch (error) {
-		console.error(error);
-	}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-
-
-
-
 async function buscarImagenes() {
-	const buscar = document.getElementById("barraBuscar").value;
-	const url = `https://google-search72.p.rapidapi.com/imagesearch?query=${buscar}&gl=us&lr=en&num=10&start=0&sort=relevance`;
-	const options = {
-		method: 'GET',
-		headers: {
-			//ab588c178fmsha19d835278e2e57p1d9b36jsnf6e7e26376a7
-			'X-RapidAPI-Key': 'adaad128aemsh6cfb78feb6e838dp15a6d2jsn85a17c09c579',
-			'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
-		}
-	};
+  const buscar = document.getElementById("barraBuscar").value;
+  const url = `https://google-search72.p.rapidapi.com/imagesearch?query=${buscar}&gl=us&lr=en&num=10&start=0&sort=relevance`;
+  const options = {
+    method: "GET",
+    headers: {
+     
+      "X-RapidAPI-Key": "ab588c178fmsha19d835278e2e57p1d9b36jsnf6e7e26376a7",
+      "X-RapidAPI-Host": "google-search72.p.rapidapi.com",
+    },
+  };
 
-	try {
-		const response = await fetch(url, options);
-		const result = await response.json();
-		console.log(result);
-		console.log(result.items[0].originalImageUrl);
-		document.getElementById("info").innerHTML = `
-	
-	<div class="row" >
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result);
+    document.getElementById("info").innerHTML = `
+	    
+	  <div class="row" >
 	
 		<div class="col-lg-3" style="padding-right: 0px;width: 170px;">
 			<img src="./imagenes/google.gif" alt="imagen google" style="height: 100px; padding-right: 0px;">
@@ -141,19 +135,115 @@ async function buscarImagenes() {
 				Buscar imagenes
 			</button>
 		</div>
-		
-	</div>
-       <br>
-	<div style="margin-left:30px;">
-		<div class="row">
-			<div class="col-1>
-			<img src="${result.items[0].originalImageUrl}" alt="imagen de la busqueda">
-			</div>
-		</div>
 		<br>
-	</div>`;
 		
-	} catch (error) {
-		console.error(error);
-	}
+		<div class="row">
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[0].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[0].title}</h5>
+		  <a href="${result.items[0].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[1].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 >${result.items[1].title}</h5>
+		  <a href="${result.items[1].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[2].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 >${result.items[2].title}</h5>
+		  <a href="${result.items[2].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[3].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[3].title}</h5>
+		  <a href="${result.items[3].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[4].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[4].title}</h5>
+		  <a href="${result.items[4].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[5].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[5].title}</h5>
+		  <a href="${result.items[5].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <br>
+		<br>
+		<br>
+		<br>
+		<div class="row">
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[6].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[6].title}</h5>
+		  <a href="${result.items[6].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[7].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[7].title}</h5>
+		  <a href="${result.items[7].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[8].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[8].title}</h5>
+		  <a href="${result.items[8].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+        <div class="col-lg-2">
+		<div class="card" style="width: 18rem;">
+		<img src="${result.items[9].thumbnailImageUrl}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5>${result.items[9].title}</h5>
+		  <a href="${result.items[9].contextLink}" class="btn btn-primary">Picture Context</a>
+		</div>
+	  </div>
+
+        </div>
+		</div>
+    </div>`;
+  } catch (error) {
+    console.error(error);
+  }
 }
