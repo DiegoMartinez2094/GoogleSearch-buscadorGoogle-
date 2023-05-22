@@ -288,7 +288,7 @@ async function traductor() {
 		  </button>
 	  </div>
   
-</div><br>
+</div><br> 
 	  <div class="row" >
 
 	  <div class="col-lg-3" style="margin-left: 50px";>
