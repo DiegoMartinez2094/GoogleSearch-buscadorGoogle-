@@ -1,6 +1,11 @@
 Google.
 
-This project consists of the consumption of three APIS which are: Google link search, Google image search and Google translator.
+This project consists of the consumption of three APIS which are: 
+
+* Google link search
+* Google image search
+
+*  Google translator.
 
 First we find a moving Google logo followed by a text input bar in which you can enter the words with which you want to search, then you must press the type of search you want to do, search google links or images, for the translator section, it is not necessary to enter text.
 
@@ -16,4 +21,4 @@ In the second option we can enter the text to search for related images, in this
 
 finally for the translator section, we press the google translate button and we find a text box where we enter the words to translate, we choose the language and to which we will translate it, then we press the translate button and we find the translated text in the box on the right.
 
-![1684718578572](image/README/1684718578572.png)
+* ![1684718578572](image/README/1684718578572.png)
