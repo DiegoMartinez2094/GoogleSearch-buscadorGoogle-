@@ -21,4 +21,4 @@ In the second option we can enter the text to search for related images, in this
 
 finally for the translator section, we press the google translate button and we find a text box where we enter the words to translate, we choose the language and to which we will translate it, then we press the translate button and we find the translated text in the box on the right.
 
-* ![1684718578572](image/README/1684718578572.png)
+![1684718578572](image/README/1684718578572.png)
